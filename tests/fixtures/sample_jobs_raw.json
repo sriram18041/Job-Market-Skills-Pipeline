@@ -1,0 +1,54 @@
+{
+  "fetched_at": "20261117T000000Z",
+  "job_count": 4,
+  "jobs": [
+    {
+      "slug": "sample-data-engineer-1",
+      "title": "Data Engineer",
+      "company_name": "ExampleCorp",
+      "location": "Paris, France",
+      "remote": false,
+      "tags": ["python", "sql", "etl"],
+      "job_types": ["Full Time"],
+      "description": "We need a Data Engineer skilled in Python, SQL, and ETL pipelines. Experience with Spark and Databricks is a strong plus. Familiarity with Docker and basic CI/CD practices is expected. AWS experience is a bonus.",
+      "created_at": "2026-11-10",
+      "url": "https://example.com/jobs/sample-data-engineer-1"
+    },
+    {
+      "slug": "sample-backend-dev-2",
+      "title": "Backend Developer",
+      "company_name": "SecondCorp",
+      "location": "Berlin, Germany",
+      "remote": true,
+      "tags": ["java", "spring-boot"],
+      "job_types": ["Full Time"],
+      "description": "Join our team to build microservices in Java with Spring Boot. You'll work with PostgreSQL, write tests, and ship through our CI/CD pipeline using GitHub Actions and Docker containers.",
+      "created_at": "2026-11-11",
+      "url": "https://example.com/jobs/sample-backend-dev-2"
+    },
+    {
+      "slug": "sample-bi-analyst-3",
+      "title": "BI Analyst",
+      "company_name": "ThirdCorp",
+      "location": "Luxembourg",
+      "remote": false,
+      "tags": ["power-bi", "tableau"],
+      "job_types": ["Full Time"],
+      "description": "Build dashboards in Power BI and Tableau, write SQL queries against our data warehouse, and support the analytics team.",
+      "created_at": "2026-11-12",
+      "url": "https://example.com/jobs/sample-bi-analyst-3"
+    },
+    {
+      "slug": "sample-ai-engineer-4",
+      "title": "GenAI Software Engineer",
+      "company_name": "FourthCorp",
+      "location": "Luxembourg",
+      "remote": false,
+      "tags": ["python", "genai"],
+      "job_types": ["Full Time"],
+      "description": "Build GenAI-powered applications using Python, integrate LLM APIs, and deploy with Docker and Kubernetes. Agile team, daily standups, Git-based workflow.",
+      "created_at": "2026-11-13",
+      "url": "https://example.com/jobs/sample-ai-engineer-4"
+    }
+  ]
+}
