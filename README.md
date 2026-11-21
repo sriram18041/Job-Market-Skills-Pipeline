@@ -47,6 +47,9 @@ the exercise into something directly useful for a live job search.
 - **Dashboard** (`dashboard/app.py`) — a Streamlit app reading directly
   from Postgres, showing the most-requested skills with location/remote
   filters.
+- **Power BI export** (`src/export_powerbi.py`) — exports the same data
+  as a small star schema (fact + dimension CSVs, including a real date
+  table) for a Power BI Desktop report. See [POWERBI.md](POWERBI.md).
 
 ## Running it locally
 
@@ -65,6 +68,15 @@ everything:
 ```bash
 docker compose run --rm pipeline
 ```
+
+To (re)generate the Power BI CSV extracts in `powerbi/data/`:
+
+```bash
+docker compose run --rm powerbi-export
+```
+
+See [POWERBI.md](POWERBI.md) for building the actual report in Power BI
+Desktop on top of these files.
 
 ### Running without Docker
 
@@ -115,9 +127,11 @@ changes needed, since `load.py` already reads the connection string from
 ## Skills demonstrated
 
 Python · SQL · ETL pipeline design · data modelling (jobs / job_skills
-junction table) · PostgreSQL · Docker & docker-compose · CI/CD (GitHub
-Actions, scheduled + on-push) · automated testing (unit + integration) ·
-basic data visualization (Streamlit).
+junction table; a separate fact/dimension star schema with a real date
+table for reporting) · PostgreSQL · Docker & docker-compose · CI/CD
+(GitHub Actions, scheduled + on-push) · automated testing (unit +
+integration) · data visualization (Streamlit; Power BI with DAX
+measures).
 
 ## Project structure
 
@@ -128,11 +142,14 @@ job-market-skills-pipeline/
 │   ├── transform.py        # normalizes + detects skills
 │   ├── load.py              # upserts into PostgreSQL
 │   ├── pipeline.py          # orchestrates extract -> transform -> load
-│   └── skills_taxonomy.py   # the skill-keyword dictionary
+│   ├── skills_taxonomy.py   # the skill-keyword dictionary
+│   └── export_powerbi.py   # exports a star schema for Power BI
 ├── sql/schema.sql           # jobs + job_skills table definitions
 ├── dashboard/app.py         # Streamlit dashboard
+├── powerbi/                 # Power BI CSV extracts + the .pbix report
 ├── tests/                   # unit + integration tests, with fixtures
 ├── Dockerfile
 ├── docker-compose.yml
+├── POWERBI.md               # building the Power BI report, step by step
 └── .github/workflows/ci.yml # CI (tests) + CD (scheduled live pipeline run)
 ```
